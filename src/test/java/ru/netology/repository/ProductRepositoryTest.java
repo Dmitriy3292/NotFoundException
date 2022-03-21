@@ -26,8 +26,8 @@ class ProductRepositoryTest {
         repo.save(first);
         repo.save(second);
 
-        assertThrows(ArrayIndexOutOfBoundsException.class, () ->{
-                    repo.removeById(1);
+        assertThrows(NotFoundException.class, () ->{
+                    repo.removeById(12135);
                 });
 
 

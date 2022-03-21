@@ -29,7 +29,8 @@ public class ProductRepository {
     }
 
     public void removeById(int id) {
-        if (id < 0) {
+        ProductRepository FindById [];
+        if(findById(id) == null) {
             throw new NotFoundException(id);
         }
         int length = items.length - 1;
