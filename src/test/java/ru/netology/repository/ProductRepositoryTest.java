@@ -7,10 +7,11 @@ import ru.netology.domain.Product;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductRepositoryTest {
-    Product first = new Product(11,"first",10);
-    Product second = new Product(115,"second",111);
-@Test
-    public void shouldRemoveById(){
+    Product first = new Product(11, "first", 10);
+    Product second = new Product(115, "second", 111);
+
+    @Test
+    public void shouldRemoveById() {
 
         ProductRepository repo = new ProductRepository();
         repo.save(first);
@@ -20,15 +21,15 @@ class ProductRepositoryTest {
     }
 
     @Test
-    public  void shouldRemoveByNegativeID(){
+    public void shouldRemoveByNegativeID() {
 
         ProductRepository repo = new ProductRepository();
         repo.save(first);
         repo.save(second);
 
-        assertThrows(NotFoundException.class, () ->{
-                    repo.removeById(12135);
-                });
+        assertThrows(NotFoundException.class, () -> {
+            repo.removeById(13535);
+        });
 
 
     }

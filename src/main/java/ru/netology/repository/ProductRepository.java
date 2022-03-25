@@ -29,19 +29,19 @@ public class ProductRepository {
     }
 
     public void removeById(int id) {
-        ProductRepository FindById [];
-        if(findById(id) == null) {
-            throw new NotFoundException(id);
-        }
-        int length = items.length - 1;
-        Product[] tmp = new Product[length];
-        int index = 0;
-        for (Product item : items) {
-            if (item.getId() != id) {
-                tmp[index] = item;
-                index++;
+        if (findById(id) == null) {
+            throw new NotFoundException("Element with id: " + id + " not found");
+        } else {
+            int length = items.length - 1;
+            Product[] tmp = new Product[length];
+            int index = 0;
+            for (Product item : items) {
+                if (item.getId() != id) {
+                    tmp[index] = item;
+                    index++;
+                }
             }
+            items = tmp;
         }
-        items = tmp;
     }
 }
